@@ -1,12 +1,27 @@
-import java.util.HashMap;
+import java.util.*;
+
+class Bogie {
+    String name;
+    int capacity;
+
+    Bogie(String name, int capacity) {
+        this.name = name;
+        this.capacity = capacity;
+    }
+
+    public String toString() {
+        return name + " (" + capacity + ")";
+    }
+}
 
 public class TrainConsistApp {
     public static void main(String[] args) {
-        HashMap<String, Integer> bogieCapacity = new HashMap<>();
+        List<Bogie> bogies = new ArrayList<>();
+        bogies.add(new Bogie("Sleeper", 72));
+        bogies.add(new Bogie("AC Chair", 56));
 
-        bogieCapacity.put("Sleeper", 72);
-        bogieCapacity.put("AC Chair", 56);
+        bogies.sort(Comparator.comparingInt(b -> b.capacity));
 
-        System.out.println("Bogie capacities: " + bogieCapacity);
+        System.out.println("Sorted bogies: " + bogies);
     }
 }
