@@ -1,8 +1,18 @@
+import java.util.ArrayList;
+
 public class TrainConsistApp {
     public static void main(String[] args) {
-        System.out.println("Welcome to Train Consist Management System!");
+        ArrayList<String> bogies = new ArrayList<>();
 
-        int initialBogies = 0;
-        System.out.println("Initial bogie count: " + initialBogies);
+        bogies.add("Sleeper");
+        bogies.add("AC Chair");
+        bogies.add("General");
+
+        System.out.println("Train bogies: " + bogies);
+
+        bogies.remove("General");
+        System.out.println("After removal: " + bogies);
+
+        System.out.println("Contains Sleeper? " + bogies.contains("Sleeper"));
     }
 }
