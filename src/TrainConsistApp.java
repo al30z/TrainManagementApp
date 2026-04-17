@@ -1,27 +1,18 @@
 import java.util.*;
-
-class Bogie {
-    String name;
-    int capacity;
-
-    Bogie(String name, int capacity) {
-        this.name = name;
-        this.capacity = capacity;
-    }
-
-    public String toString() {
-        return name + " (" + capacity + ")";
-    }
-}
+import java.util.stream.*;
 
 public class TrainConsistApp {
     public static void main(String[] args) {
-        List<Bogie> bogies = new ArrayList<>();
-        bogies.add(new Bogie("Sleeper", 72));
-        bogies.add(new Bogie("AC Chair", 56));
+        List<Bogie> bogies = Arrays.asList(
+                new Bogie("Sleeper", 72),
+                new Bogie("AC Chair", 56),
+                new Bogie("General", 24)
+        );
 
-        bogies.sort(Comparator.comparingInt(b -> b.capacity));
+        List<Bogie> highCapacity = bogies.stream()
+                .filter(b -> b.capacity > 50)
+                .collect(Collectors.toList());
 
-        System.out.println("Sorted bogies: " + bogies);
+        System.out.println("High capacity bogies: " + highCapacity);
     }
 }
