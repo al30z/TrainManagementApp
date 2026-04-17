@@ -1,13 +1,12 @@
-import java.util.LinkedHashSet;
+import java.util.HashMap;
 
 public class TrainConsistApp {
     public static void main(String[] args) {
-        LinkedHashSet<String> bogieIds = new LinkedHashSet<>();
+        HashMap<String, Integer> bogieCapacity = new HashMap<>();
 
-        bogieIds.add("BG101");
-        bogieIds.add("BG102");
-        bogieIds.add("BG103");
+        bogieCapacity.put("Sleeper", 72);
+        bogieCapacity.put("AC Chair", 56);
 
-        System.out.println("Insertion order preserved: " + bogieIds);
+        System.out.println("Bogie capacities: " + bogieCapacity);
     }
 }
