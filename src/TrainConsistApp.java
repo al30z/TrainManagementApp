@@ -1,13 +1,13 @@
-import java.util.HashSet;
+import java.util.TreeSet;
 
 public class TrainConsistApp {
     public static void main(String[] args) {
-        HashSet<String> bogieIds = new HashSet<>();
+        TreeSet<String> bogieIds = new TreeSet<>();
 
+        bogieIds.add("BG103");
         bogieIds.add("BG101");
         bogieIds.add("BG102");
-        bogieIds.add("BG101"); // duplicate ignored
 
-        System.out.println("Unique bogie IDs: " + bogieIds);
+        System.out.println("Ordered bogie IDs: " + bogieIds);
     }
 }
